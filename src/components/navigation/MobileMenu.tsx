@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import CloseIcon from "../../assets/icons/close-icon";
+import CloseIcon from "../../assets/icons/CloseIcon";
 import { useFocusTrap } from "../../hooks/useFocusTrap";
-import Portal from "../portal";
-import NavLogo from "../../assets/icons/nav-logo";
-import Button from "../button";
-import { navLinks } from "./navigation";
+import Portal from "../Portal";
+import NavLogo from "../../assets/icons/NavLogo";
+import Button from "../Button";
+import { navLinks } from "./Navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;

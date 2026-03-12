@@ -1,9 +1,9 @@
 import { useState } from "react";
-import MobileMenu from "./mobile-menu";
-import HamburgerIcon from "../../assets/icons/hamburger";
-import NavLogo from "../../assets/icons/nav-logo";
-import Button from "../button";
-import { navLinks } from "./navigation";
+import MobileMenu from "./MobileMenu";
+import HamburgerIcon from "../../assets/icons/Hamburger";
+import NavLogo from "../../assets/icons/NavLogo";
+import Button from "../Button";
+import { navLinks } from "./Navigation";
 
 const desktopLinkClass = "rounded text-sm text-neutral-600";
 
