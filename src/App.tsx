@@ -2,6 +2,7 @@ import FaqSection from "./components/pricing-faq-section/FaqSection";
 import Navbar from "./components/navigation/Navbar";
 import { PricingTiers } from "./components/pricing-tiers-section/PricingTiers";
 import FeaturesSection from "./components/features-section/FeaturesSection";
+import TestimonialsSection from "./components/testimonials-section/TestimonialsSection";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <PricingTiers />
         <FaqSection />
         <FeaturesSection />
+        <TestimonialsSection />
       </main>
     </div>
   );
