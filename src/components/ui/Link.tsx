@@ -1,7 +1,9 @@
 import type { AnchorHTMLAttributes } from "react";
 import type { VariantProps } from "class-variance-authority";
-import { cn } from "../../utils/utils";
+
 import { buttonVariants } from "./button-variants";
+
+import { cn } from "../../utils/utils";
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   VariantProps<typeof buttonVariants>;

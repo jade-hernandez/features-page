@@ -67,7 +67,7 @@ const pricingPlans: IPricingPlan[] = [
   }
 ];
 
-export const PricingTiers = () => {
+function PricingTiers() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
@@ -105,4 +105,6 @@ export const PricingTiers = () => {
       </div>
     </div>
   );
-};
+}
+
+export default PricingTiers;

@@ -1,18 +1,23 @@
 import { useEffect, useRef } from "react";
-import CloseIcon from "./icons/CloseIcon";
-import { useFocusTrap } from "../../hooks/useFocusTrap";
-import Portal from "../ui/Portal";
-import NavLogo from "./icons/NavLogo";
+
 import Button from "../ui/Button";
 import Link from "../ui/Link";
+
+import CloseIcon from "./icons/CloseIcon";
+import NavLogo from "./icons/NavLogo";
+
+import Portal from "../ui/Portal";
 import { navLinks } from "./navigation";
+
+import { useFocusTrap } from "../../hooks/useFocusTrap";
+import { cn } from "../../utils/utils";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
   const headerId = "mobile-menu-header";
   const pathname = window.location.pathname;
@@ -27,13 +32,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
       document.body.style.overflow = "hidden";
-      document.querySelector(".gfe-main")?.classList.add("blur-sm", "brightness-90");
+      document.getElementById("page-body")?.classList.add("blur-sm", "brightness-90");
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "unset";
-      document.querySelector(".gfe-main")?.classList.remove("blur-sm", "brightness-90");
+      document.getElementById("page-body")?.classList.remove("blur-sm", "brightness-90");
     };
   }, [isOpen, onClose]);
 
@@ -44,23 +49,26 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         role='dialog'
         aria-modal='true'
         aria-labelledby={headerId}
-        className={`fixed left-0 z-50 lg:hidden ${
+        className={cn(
+          "fixed left-0 z-50 lg:hidden",
           isOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
+        )}
       >
         <div
-          className={`fixed inset-0 bg-black/50 transition-opacity duration-300 ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
           onClick={onClose}
           aria-hidden='true'
+          className={cn(
+            "fixed inset-0 bg-black/50 transition-opacity duration-300",
+            isOpen ? "opacity-100" : "opacity-0"
+          )}
         />
 
         <div
           ref={menuRef}
-          className={`fixed inset-y-0 left-0 z-50 flex w-fit min-w-[359px] flex-col gap-6 bg-white p-4 pt-8 transition-transform duration-300 ease-in-out ${
+          className={cn(
+            "fixed inset-y-0 left-0 z-50 flex w-fit min-w-89.75 flex-col gap-6 bg-white p-4 pt-8 transition-transform duration-300 ease-in-out",
             isOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          )}
         >
           <div className='flex items-center justify-between'>
             <h2
@@ -84,9 +92,10 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <nav
             role='navigation'
             aria-label='Mobile navigation'
-            className={`flex flex-1 flex-col gap-2 transition-all duration-300 ${
+            className={cn(
+              "flex flex-1 flex-col gap-2 transition-all duration-300",
               isOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
-            }`}
+            )}
             style={{ transitionDelay: isOpen ? "150ms" : "0ms" }}
           >
             {navLinks.map(({ href, label }) => {
@@ -99,11 +108,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   size='md-link'
                   onClick={onClose}
                   aria-current={isActive ? "page" : undefined}
-                  className={`justify-start p-3 ${
+                  className={cn(
+                    "justify-start p-3",
                     isActive
                       ? "bg-neutral-50 text-neutral-900"
                       : "hover:bg-neutral-50 hover:text-neutral-900 focus:bg-neutral-50"
-                  }`}
+                  )}
                 >
                   {label}
                 </Link>
@@ -134,3 +144,5 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     </Portal>
   );
 }
+
+export default MobileMenu;
