@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+
 import { validateEmail } from "../../utils/validation";
 
 export const MAX_MESSAGE_LENGTH = 500;
@@ -6,25 +7,25 @@ export const MAX_MESSAGE_LENGTH = 500;
 const FALLBACK_ERROR =
   "Failed to submit. Please ensure your details are correct or try again later.";
 
-export interface IToastState {
+export type ToastState = {
   type: "success" | "error";
   message: string;
-}
+};
 
-interface FormState {
+type FormState = {
   name: string;
   email: string;
   message: string;
   isLoading: boolean;
   errors: { name: string; email: string; message: string };
-  toast: IToastState | null;
-}
+  toast: ToastState | null;
+};
 
 type FormAction =
   | { type: "SET_FIELD"; field: "name" | "email" | "message"; value: string }
   | { type: "SET_ERRORS"; errors: FormState["errors"] }
   | { type: "SET_LOADING"; isLoading: boolean }
-  | { type: "SET_TOAST"; toast: IToastState | null }
+  | { type: "SET_TOAST"; toast: ToastState | null }
   | { type: "RESET_FORM" };
 
 const initialState: FormState = {
@@ -39,21 +40,35 @@ const initialState: FormState = {
 function formReducer(state: FormState, action: FormAction): FormState {
   switch (action.type) {
     case "SET_FIELD":
-      return { ...state, [action.field]: action.value };
+      return {
+        ...state,
+        [action.field]: action.value
+      };
     case "SET_ERRORS":
-      return { ...state, errors: action.errors };
+      return {
+        ...state,
+        errors: action.errors
+      };
     case "SET_LOADING":
-      return { ...state, isLoading: action.isLoading };
+      return {
+        ...state,
+        isLoading: action.isLoading
+      };
     case "SET_TOAST":
-      return { ...state, toast: action.toast };
+      return {
+        ...state,
+        toast: action.toast
+      };
     case "RESET_FORM":
-      return { ...initialState };
+      return {
+        ...initialState
+      };
     default:
       return state;
   }
 }
 
-const useContactForm = () => {
+export function useContactForm() {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const { name, email, message, isLoading, errors, toast } = state;
 
@@ -144,9 +159,7 @@ const useContactForm = () => {
     toast,
     setField: (field: "name" | "email" | "message", value: string) =>
       dispatch({ type: "SET_FIELD", field, value }),
-    setToast: (toast: IToastState | null) => dispatch({ type: "SET_TOAST", toast }),
+    setToast: (toast: ToastState | null) => dispatch({ type: "SET_TOAST", toast }),
     submitContactForm
   };
-};
-
-export default useContactForm;
+}

@@ -1,13 +1,19 @@
+import { forwardRef } from "react";
 import { RiCheckFill } from "react-icons/ri";
+
 import Button from "../ui/Button";
 
-export default function FormSuccess({ onReset }: { onReset: () => void }) {
+interface FormSuccessProps {
+  onReset: () => void;
+}
+
+function FormSuccess({ onReset }: FormSuccessProps, ref: React.Ref<HTMLDivElement>) {
   return (
     <div
+      ref={ref}
+      tabIndex={-1}
       className='flex w-full max-w-[calc(50%-16px)] flex-col rounded-lg border border-neutral-200 px-8 py-18.25 shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)]'
       role='status'
-      aria-live='polite'
-      aria-label='Form submission successful'
     >
       <div className='flex flex-col items-center gap-16 px-25.25'>
         <div className='flex flex-col items-center gap-6'>
@@ -33,3 +39,5 @@ export default function FormSuccess({ onReset }: { onReset: () => void }) {
     </div>
   );
 }
+
+export default forwardRef(FormSuccess);

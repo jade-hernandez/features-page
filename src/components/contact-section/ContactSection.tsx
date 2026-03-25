@@ -1,11 +1,14 @@
-import { cn } from "../../utils/utils";
+import { useEffect, useRef } from "react";
 import { RiBuildingLine, RiMailLine, RiPhoneLine } from "react-icons/ri";
 
-import useContactForm from "./useContactForm";
 import Button from "../ui/Button";
-import FormSuccess from "./FormSuccess";
-import Toast from "../ui/Toast";
 import Textarea from "../ui/Textarea";
+import Toast from "../ui/Toast";
+
+import FormSuccess from "./FormSuccess";
+import { useContactForm } from "./useContactForm";
+
+import { cn } from "../../utils/utils";
 
 const contactItems = [
   { icon: RiBuildingLine, label: "123 Maple Street, Springfield, IL, USA" },
@@ -13,9 +16,17 @@ const contactItems = [
   { icon: RiMailLine, label: "hello@abstractly.com", href: "mailto:hello@abstractly.com" }
 ];
 
-export default function ContactSection() {
+function ContactSection() {
   const { name, email, message, isLoading, errors, toast, setToast, setField, submitContactForm } =
     useContactForm();
+
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (toast?.type === "success" && successRef.current) {
+      successRef.current.focus();
+    }
+  }, [toast?.type]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,8 +38,7 @@ export default function ContactSection() {
       {toast?.type === "error" && (
         <div
           className='fixed top-6 left-1/2 z-50 -translate-x-1/2'
-          role='status'
-          aria-live='assertive'
+          role='alert'
           aria-atomic='true'
           aria-label='Error message'
         >
@@ -44,25 +54,21 @@ export default function ContactSection() {
         aria-labelledby='contact-heading'
       >
         <div className='flex max-w-304 flex-col gap-12 md:gap-16 lg:flex-row lg:gap-8'>
-          {/* Left column */}
           <div className='flex w-full flex-col items-start justify-between gap-10 md:gap-12 lg:max-w-[calc(50%-16px)] lg:py-2.75'>
             <div className='flex flex-col gap-5'>
-              <h1
+              <h2
                 id='contact-heading'
                 className='text-4xl font-semibold text-neutral-900 md:text-5xl lg:text-6xl'
               >
                 Talk to our team
-              </h1>
+              </h2>
               <p className='max-w-150 text-lg text-neutral-600 md:max-w-full md:text-xl'>
                 We're committed to delivering the support you require to make your experience as
                 smooth as possible.
               </p>
             </div>
-            <section aria-label='Contact information'>
-              <ul
-                className='flex flex-col gap-6'
-                role='list'
-              >
+            <div aria-label='Contact information'>
+              <ul className='flex flex-col gap-6'>
                 {contactItems.map(({ icon: Icon, label, href }) => (
                   <li
                     key={label}
@@ -79,25 +85,27 @@ export default function ContactSection() {
                         {label}
                       </a>
                     ) : (
-                      <span className='max-w-36.5 text-base font-medium text-neutral-600 md:max-w-full'>
+                      <p className='max-w-36.5 text-base font-medium text-neutral-600 md:max-w-full'>
                         {label}
-                      </span>
+                      </p>
                     )}
                   </li>
                 ))}
               </ul>
-            </section>
+            </div>
           </div>
 
-          {/* Right column */}
           {toast?.type === "success" ? (
-            <FormSuccess onReset={() => setToast(null)} />
+            <FormSuccess
+              ref={successRef}
+              onReset={() => setToast(null)}
+            />
           ) : (
             <form
               onSubmit={handleSubmit}
               noValidate
               className='flex w-full flex-col gap-10 rounded-lg border border-neutral-200 p-4 shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)] md:p-8 lg:max-w-[calc(50%-16px)]'
-              aria-describedby='contact-heading'
+              aria-labelledby='contact-heading'
             >
               <div className='flex flex-col gap-6'>
                 <div className='flex flex-col gap-6 md:flex-row md:gap-8'>
@@ -186,3 +194,5 @@ export default function ContactSection() {
     </>
   );
 }
+
+export default ContactSection;
