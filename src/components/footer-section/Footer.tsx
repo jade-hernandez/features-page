@@ -1,62 +1,40 @@
-import type { HTMLAttributes } from "react";
-import { forwardRef } from "react";
-
 import type { ComponentType } from "react";
-import { cn } from "../../utils/utils";
-import Link from "../ui/Link";
-import Button from "../ui/Button";
 
-type TNavItem = {
-  id: number | string;
+import Link from "../ui/Link";
+
+import { cn } from "../../utils/utils";
+
+const CURRENT_YEAR = 2026;
+
+export type NavItem = {
+  key: number | string;
   title: string;
   path: string;
 };
 
-type TSocialIcon = {
-  id: string;
-  icon: ComponentType<{ size: number; color: string }>;
+export type SocialIcon = {
+  key: string;
+  icon: ComponentType;
   label: string;
-  onClick?: () => void;
+  href: string;
 };
 
-export interface FooterProps extends HTMLAttributes<HTMLElement> {
-  navItems: TNavItem[];
-  socialIcons: TSocialIcon[];
-  companyName?: string;
-  showSocialIcons?: boolean;
-  showCopyright?: boolean;
-  initialYear?: number;
-}
+type FooterProps = {
+  navItems: NavItem[];
+  socialIcons: SocialIcon[];
+  companyName: string;
+  className?: string;
+};
 
-const Footer = forwardRef<HTMLElement, FooterProps>(
-  (
-    {
-      navItems,
-      socialIcons,
-      companyName,
-      showSocialIcons = true,
-      showCopyright = true,
-      initialYear,
-      className,
-      ...props
-    },
-    ref
-  ) => {
-    const currentYear = new Date().getFullYear();
-    const yearDisplay =
-      initialYear && initialYear !== currentYear ? `${initialYear}-${currentYear}` : currentYear;
-
-    return (
-      <footer
-        ref={ref}
-        className={cn("flex flex-col items-center justify-center gap-4", className)}
-        {...props}
-      >
-        {navItems.length > 0 && (
+function Footer({ navItems, socialIcons, companyName, className }: FooterProps) {
+  return (
+    <footer className={cn("flex flex-col items-center justify-center gap-4", className)}>
+      {navItems.length > 0 && (
+        <nav aria-label='Footer navigation'>
           <div className='flex items-center justify-center gap-4 lg:gap-6'>
-            {navItems.map(({ path, id, title }) => (
+            {navItems.map(({ path, key, title }) => (
               <Link
-                key={id}
+                key={key}
                 href={path}
                 variant='linkGray'
                 size='md-link'
@@ -66,39 +44,34 @@ const Footer = forwardRef<HTMLElement, FooterProps>(
               </Link>
             ))}
           </div>
+        </nav>
+      )}
+
+      <div className='flex flex-col items-center justify-center gap-4'>
+        {socialIcons.length > 0 && (
+          <div className='flex items-center justify-center gap-6'>
+            {socialIcons.map(({ key, icon: Icon, label, href }) => (
+              <Link
+                key={key}
+                href={href}
+                variant='linkGray'
+                size='icon-md'
+                aria-label={label}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Icon aria-hidden='true' />
+              </Link>
+            ))}
+          </div>
         )}
 
-        <div className='flex flex-col items-center justify-center gap-4'>
-          {showSocialIcons && socialIcons.length > 0 && (
-            <div className='flex items-center justify-center gap-6'>
-              {socialIcons.map(({ id, icon: Icon, label, onClick }) => (
-                <Button
-                  key={id}
-                  variant='linkGray'
-                  size='icon-md'
-                  onClick={onClick}
-                  aria-label={label}
-                >
-                  <Icon
-                    size={24}
-                    color='#A3A3A3'
-                  />
-                </Button>
-              ))}
-            </div>
-          )}
+        <p className='text-sm text-neutral-900'>
+          &copy; {CURRENT_YEAR} {companyName}. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}
 
-          {showCopyright && (
-            <p className='text-sm text-neutral-900'>
-              &copy; {yearDisplay} {companyName}. All rights reserved.
-            </p>
-          )}
-        </div>
-      </footer>
-    );
-  }
-);
-
-Footer.displayName = "Footer";
-
-export { Footer };
+export default Footer;
