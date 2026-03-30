@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import Textarea from "../ui/Textarea";
 import Toast from "../ui/Toast";
 
-import FormSuccess from "./FormSuccess";
+import { FormSuccess } from "./FormSuccess";
 import { useContactForm } from "./useContactForm";
 
 import { cn } from "../../utils/utils";

@@ -1,13 +1,13 @@
-import { forwardRef } from "react";
 import { RiCheckFill } from "react-icons/ri";
 
 import Button from "../ui/Button";
 
 interface FormSuccessProps {
   onReset: () => void;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-function FormSuccess({ onReset }: FormSuccessProps, ref: React.Ref<HTMLDivElement>) {
+function FormSuccess({ onReset, ref }: FormSuccessProps) {
   return (
     <div
       ref={ref}
@@ -40,4 +40,4 @@ function FormSuccess({ onReset }: FormSuccessProps, ref: React.Ref<HTMLDivElemen
   );
 }
 
-export default forwardRef(FormSuccess);
+export { FormSuccess };
