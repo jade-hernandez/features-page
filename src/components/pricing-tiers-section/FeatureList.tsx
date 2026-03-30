@@ -1,4 +1,4 @@
-import FeatureIcon from "./FeatureIcon";
+import { FeatureIcon } from "./FeatureIcon";
 
 function FeatureListItem({ content }: { content: string }) {
   return (

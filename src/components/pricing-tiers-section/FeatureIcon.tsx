@@ -22,4 +22,4 @@ function FeatureIcon() {
   );
 }
 
-export default FeatureIcon;
+export { FeatureIcon };

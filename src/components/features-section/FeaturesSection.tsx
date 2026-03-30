@@ -1,5 +1,5 @@
 import { cardsData } from "./features-data";
-import FeatureCard from "./FeatureCard";
+import { FeatureCard } from "./FeatureCard";
 
 function FeaturesSection() {
   return (
@@ -37,4 +37,4 @@ function FeaturesSection() {
   );
 }
 
-export default FeaturesSection;
+export { FeaturesSection };

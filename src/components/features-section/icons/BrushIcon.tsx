@@ -77,4 +77,4 @@ function BrushIcon() {
   );
 }
 
-export default BrushIcon;
+export { BrushIcon };

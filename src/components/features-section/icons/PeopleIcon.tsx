@@ -77,4 +77,4 @@ function PeopleIcon() {
   );
 }
 
-export default PeopleIcon;
+export { PeopleIcon };

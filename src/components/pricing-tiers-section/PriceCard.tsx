@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import { Button } from "../ui/Button";
 
 import type { BillingCycle, PricingPlan } from "./pricing-types";
 import { FeatureList } from "./FeatureList";

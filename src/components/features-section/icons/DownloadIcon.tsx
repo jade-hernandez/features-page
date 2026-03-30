@@ -77,4 +77,4 @@ function DownloadIcon() {
   );
 }
 
-export default DownloadIcon;
+export { DownloadIcon };

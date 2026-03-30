@@ -1,10 +1,10 @@
 import type { NavItem, SocialIcon } from "./Footer";
 
-import FacebookIcon from "./icons/FacebookIcon";
-import GithubIcon from "./icons/GithubIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import XIcon from "./icons/XIcon";
-import YoutubeIcon from "./icons/YoutubeIcon";
+import { FacebookIcon } from "./icons/FacebookIcon";
+import { GithubIcon } from "./icons/GithubIcon";
+import { InstagramIcon } from "./icons/InstagramIcon";
+import { XIcon } from "./icons/XIcon";
+import { YoutubeIcon } from "./icons/YoutubeIcon";
 
 export const sectionsData: NavItem[] = [
   { key: "features-path", title: "Features", path: "/" },

@@ -2,8 +2,8 @@ import * as Accordion from "@radix-ui/react-accordion";
 
 import { AccordionTrigger, AccordionContent } from "../ui/Accordion";
 
-import IconFaqClose from "./icons/FaqCloseIcon";
-import IconFaqOpen from "./icons/FaqOpenIcon";
+import { IconFaqClose } from "./icons/FaqCloseIcon";
+import { IconFaqOpen } from "./icons/FaqOpenIcon";
 
 interface FaqItemProps {
   position: number;
@@ -37,4 +37,4 @@ function FaqItem({ position, title, content, isLast = false }: FaqItemProps) {
   );
 }
 
-export default FaqItem;
+export { FaqItem };

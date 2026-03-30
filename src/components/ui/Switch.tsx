@@ -29,4 +29,4 @@ function SegmentedControl({ options, value, onChange }: SegmentedControlProps) {
   );
 }
 
-export default SegmentedControl;
+export { SegmentedControl };

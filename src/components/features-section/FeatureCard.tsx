@@ -12,4 +12,4 @@ function FeatureCard({ icon: Icon, title, content }: FeatureCardProps) {
   );
 }
 
-export default FeatureCard;
+export { FeatureCard };

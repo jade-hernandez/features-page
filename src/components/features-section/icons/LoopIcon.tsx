@@ -77,4 +77,4 @@ function LoopIcon() {
   );
 }
 
-export default LoopIcon;
+export { LoopIcon };

@@ -23,4 +23,4 @@ function TestimonialCard({ name, username, testimonial, imageUrl }: TestimonialC
   );
 }
 
-export default TestimonialCard;
+export { TestimonialCard };

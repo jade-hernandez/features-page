@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { RiBuildingLine, RiMailLine, RiPhoneLine } from "react-icons/ri";
 
-import Button from "../ui/Button";
-import Textarea from "../ui/Textarea";
-import Toast from "../ui/Toast";
+import { Button } from "../ui/Button";
+import { Textarea } from "../ui/Textarea";
+import { Toast } from "../ui/Toast";
 
 import { FormSuccess } from "./FormSuccess";
 import { useContactForm } from "./useContactForm";
@@ -195,4 +195,4 @@ function ContactSection() {
   );
 }
 
-export default ContactSection;
+export { ContactSection };

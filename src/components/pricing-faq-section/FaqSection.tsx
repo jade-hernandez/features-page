@@ -1,8 +1,8 @@
-import Button from "../ui/Button";
-import Link from "../ui/Link";
+import { Button } from "../ui/Button";
+import { Link } from "../ui/Link";
 
-import FaqItem from "./FaqItem";
-import faqContentData from "./faq-data";
+import { FaqItem } from "./FaqItem";
+import { faqContentData } from "./faq-data";
 
 function FaqSection() {
   return (
@@ -60,4 +60,4 @@ function FaqSection() {
   );
 }
 
-export default FaqSection;
+export { FaqSection };

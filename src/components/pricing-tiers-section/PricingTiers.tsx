@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import SegmentedControl from "../ui/Switch";
+import { SegmentedControl } from "../ui/Switch";
 
 import { PriceCard } from "./PriceCard";
-import pricingPlans from "./pricing-data";
+import { pricingPlans } from "./pricing-data";
 
 function PricingTiers() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -51,4 +51,4 @@ function PricingTiers() {
   );
 }
 
-export default PricingTiers;
+export { PricingTiers };

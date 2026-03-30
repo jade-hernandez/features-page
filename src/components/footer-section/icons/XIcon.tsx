@@ -12,4 +12,4 @@ function XIcon() {
   );
 }
 
-export default XIcon;
+export { XIcon };

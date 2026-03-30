@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import Badge from "./Badge";
+
+import { Badge } from "./Badge";
 
 type ToastProps = {
   type: "success" | "error";
@@ -44,4 +45,4 @@ function Toast({ type, message, onClose, duration = 4000 }: ToastProps) {
   );
 }
 
-export default Toast;
+export { Toast };

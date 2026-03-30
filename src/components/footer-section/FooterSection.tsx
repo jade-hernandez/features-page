@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import { Footer } from "./Footer";
 import { defaultIcons, sectionsData } from "./footer-data";
 
 function FooterSection() {
@@ -22,4 +22,4 @@ function FooterSection() {
   );
 }
 
-export default FooterSection;
+export { FooterSection };

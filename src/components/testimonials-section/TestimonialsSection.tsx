@@ -1,4 +1,4 @@
-import TestimonialCard from "./TestimonialCard";
+import { TestimonialCard } from "./TestimonialCard";
 import { testimonialsData } from "./testimonials-data";
 
 function TestimonialsSection() {
@@ -82,4 +82,4 @@ function TestimonialsSection() {
   );
 }
 
-export default TestimonialsSection;
+export { TestimonialsSection };

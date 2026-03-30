@@ -19,4 +19,4 @@ function Button({ variant, size, className, children, ...rest }: ButtonProps) {
   );
 }
 
-export default Button;
+export { Button };

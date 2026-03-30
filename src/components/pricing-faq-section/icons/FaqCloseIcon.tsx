@@ -17,4 +17,4 @@ function IconFaqClose(props: IconProps) {
   );
 }
 
-export default IconFaqClose;
+export { IconFaqClose };

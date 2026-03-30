@@ -12,4 +12,4 @@ function GithubIcon() {
   );
 }
 
-export default GithubIcon;
+export { GithubIcon };

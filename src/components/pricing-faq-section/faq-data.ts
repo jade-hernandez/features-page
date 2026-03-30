@@ -43,4 +43,4 @@ const faqContentData: FaqContent[] = [
   }
 ];
 
-export default faqContentData;
+export { faqContentData };

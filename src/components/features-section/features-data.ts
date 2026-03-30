@@ -1,10 +1,10 @@
 import type { ComponentType } from "react";
-import DownloadIcon from "./icons/DownloadIcon";
-import BrushIcon from "./icons/BrushIcon";
-import CopyrightIcon from "./icons/CopyrightIcon";
-import DollarIcon from "./icons/DollarIcon";
-import PeopleIcon from "./icons/PeopleIcon";
-import LoopIcon from "./icons/LoopIcon";
+import { DownloadIcon } from "./icons/DownloadIcon";
+import { BrushIcon } from "./icons/BrushIcon";
+import { CopyrightIcon } from "./icons/CopyrightIcon";
+import { DollarIcon } from "./icons/DollarIcon";
+import { PeopleIcon } from "./icons/PeopleIcon";
+import { LoopIcon } from "./icons/LoopIcon";
 
 export type FeatureCardData = {
   icon: ComponentType;

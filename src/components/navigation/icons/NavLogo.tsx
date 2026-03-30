@@ -26,4 +26,4 @@ function NavLogo(props: IconProps) {
   );
 }
 
-export default NavLogo;
+export { NavLogo };

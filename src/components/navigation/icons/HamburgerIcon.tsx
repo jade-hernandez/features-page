@@ -17,4 +17,4 @@ function HamburgerIcon(props: IconProps) {
   );
 }
 
-export default HamburgerIcon;
+export { HamburgerIcon };

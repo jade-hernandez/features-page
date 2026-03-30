@@ -12,4 +12,4 @@ function FacebookIcon() {
   );
 }
 
-export default FacebookIcon;
+export { FacebookIcon };

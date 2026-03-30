@@ -77,4 +77,4 @@ function DollarIcon() {
   );
 }
 
-export default DollarIcon;
+export { DollarIcon };

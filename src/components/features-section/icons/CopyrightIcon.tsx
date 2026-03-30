@@ -77,4 +77,4 @@ function CopyrightIcon() {
   );
 }
 
-export default CopyrightIcon;
+export { CopyrightIcon };

@@ -1,10 +1,10 @@
-type TFeatureData = {
+type FeatureData = {
   basic: string[];
   standard: string[];
   premium: string[];
 };
 
-const featureData: TFeatureData = {
+const featureData: FeatureData = {
   basic: ["Standard quality images", "Limited to personal use", "Email support"],
   standard: [
     "Expanded library with more diverse abstract images",
@@ -23,4 +23,4 @@ const featureData: TFeatureData = {
   ]
 };
 
-export default featureData;
+export { featureData };

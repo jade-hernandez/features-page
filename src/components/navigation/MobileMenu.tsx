@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 
-import Button from "../ui/Button";
-import Link from "../ui/Link";
+import { Button } from "../ui/Button";
+import { Link } from "../ui/Link";
 
-import CloseIcon from "./icons/CloseIcon";
-import NavLogo from "./icons/NavLogo";
+import { CloseIcon } from "./icons/CloseIcon";
+import { NavLogo } from "./icons/NavLogo";
 
-import Portal from "../ui/Portal";
+import { Portal } from "../ui/Portal";
 import { navLinks } from "./navigation";
 
 import { useFocusTrap } from "../../hooks/useFocusTrap";
@@ -145,4 +145,4 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   );
 }
 
-export default MobileMenu;
+export { MobileMenu };

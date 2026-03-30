@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-import Button from "../ui/Button";
-import Link from "../ui/Link";
+import { Button } from "../ui/Button";
+import { Link } from "../ui/Link";
 
-import HamburgerIcon from "./icons/HamburgerIcon";
-import NavLogo from "./icons/NavLogo";
+import { HamburgerIcon } from "./icons/HamburgerIcon";
+import { NavLogo } from "./icons/NavLogo";
 
-import MobileMenu from "./MobileMenu";
+import { MobileMenu } from "./MobileMenu";
 import { navLinks } from "./navigation";
 
 import { cn } from "../../utils/utils";
@@ -85,4 +85,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export { Navbar };

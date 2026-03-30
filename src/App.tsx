@@ -1,12 +1,12 @@
-import Navbar from "./components/navigation/Navbar";
+import { Navbar } from "./components/navigation/Navbar";
 
-import PricingTiers from "./components/pricing-tiers-section/PricingTiers";
-import FaqSection from "./components/pricing-faq-section/FaqSection";
-import FeaturesSection from "./components/features-section/FeaturesSection";
-import TestimonialsSection from "./components/testimonials-section/TestimonialsSection";
-import ContactSection from "./components/contact-section/ContactSection";
+import { PricingTiers } from "./components/pricing-tiers-section/PricingTiers";
+import { FaqSection } from "./components/pricing-faq-section/FaqSection";
+import { FeaturesSection } from "./components/features-section/FeaturesSection";
+import { TestimonialsSection } from "./components/testimonials-section/TestimonialsSection";
+import { ContactSection } from "./components/contact-section/ContactSection";
 
-import FooterSection from "./components/footer-section/FooterSection";
+import { FooterSection } from "./components/footer-section/FooterSection";
 
 function App() {
   return (

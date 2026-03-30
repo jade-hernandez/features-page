@@ -19,4 +19,4 @@ function Link({ variant, size, className, children, ...rest }: LinkProps) {
   );
 }
 
-export default Link;
+export { Link };

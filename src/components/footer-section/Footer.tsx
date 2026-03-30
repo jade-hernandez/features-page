@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 
-import Link from "../ui/Link";
+import { Link } from "../ui/Link";
 
 import { cn } from "../../utils/utils";
 
@@ -74,4 +74,4 @@ function Footer({ navItems, socialIcons, companyName, className }: FooterProps) 
   );
 }
 
-export default Footer;
+export { Footer };

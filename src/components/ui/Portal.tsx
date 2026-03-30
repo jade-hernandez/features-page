@@ -12,4 +12,4 @@ function Portal({ children }: PortalProps) {
   return createPortal(children, portalRoot);
 }
 
-export default Portal;
+export { Portal };

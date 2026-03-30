@@ -1,9 +1,9 @@
-export interface IBadgeProps {
+export interface BadgeProps {
   label: string;
   classNames: string;
 }
 
-export default function Badge({ label, classNames }: Readonly<IBadgeProps>) {
+function Badge({ label, classNames }: Readonly<BadgeProps>) {
   return (
     <div
       className={
@@ -15,3 +15,5 @@ export default function Badge({ label, classNames }: Readonly<IBadgeProps>) {
     </div>
   );
 }
+
+export { Badge };

@@ -1,5 +1,5 @@
 import type { PricingPlan } from "./pricing-types";
-import featureData from "./feature-data";
+import { featureData } from "./feature-data";
 
 const pricingPlans: PricingPlan[] = [
   {
@@ -33,4 +33,4 @@ const pricingPlans: PricingPlan[] = [
   }
 ];
 
-export default pricingPlans;
+export { pricingPlans };

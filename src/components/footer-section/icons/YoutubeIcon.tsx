@@ -12,4 +12,4 @@ function YoutubeIcon() {
   );
 }
 
-export default YoutubeIcon;
+export { YoutubeIcon };

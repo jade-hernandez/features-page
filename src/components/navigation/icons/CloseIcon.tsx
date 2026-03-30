@@ -17,4 +17,4 @@ function CloseIcon(props: IconProps) {
   );
 }
 
-export default CloseIcon;
+export { CloseIcon };
