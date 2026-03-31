@@ -1,5 +1,6 @@
 import { Navbar } from "./blocks/navigation/Navbar";
 
+import { HeroSection } from "./blocks/hero-section/HeroSection";
 import { FaqSection } from "./blocks/pricing-faq-section/FaqSection";
 import { FeaturesSection } from "./blocks/features-section/FeaturesSection";
 import { TestimonialsSection } from "./blocks/testimonials-section/TestimonialsSection";
@@ -16,6 +17,7 @@ function App() {
       <Navbar />
       <div className='mt-4 flex w-full flex-col rounded-md bg-white'>
         <main className='flex flex-col'>
+          <HeroSection />
           <FeaturesSection />
           <TestimonialsSection />
           <FaqSection />
