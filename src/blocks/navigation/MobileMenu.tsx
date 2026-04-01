@@ -83,7 +83,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               size='icon-md'
               onClick={onClose}
               aria-label='Close mobile menu'
-              className='focus:shadow-[0_0px_0px_1px_rgba(68,76,231,1),0_0px_0px_4px_rgba(68,76,231,0.12)]'
+              className='w-fit focus:shadow-[0_0px_0px_1px_rgba(68,76,231,1),0_0px_0px_4px_rgba(68,76,231,0.12)]'
             >
               <CloseIcon />
             </Button>
@@ -126,7 +126,6 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               variant='secondary'
               size='lg'
               onClick={onClose}
-              className='w-full justify-center'
             >
               Learn more
             </Button>
@@ -134,7 +133,6 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               variant='primary'
               size='lg'
               onClick={onClose}
-              className='w-full justify-center'
             >
               Try it out
             </Button>

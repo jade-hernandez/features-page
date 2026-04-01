@@ -50,7 +50,7 @@ function FaqSection() {
           <Button
             variant='primary'
             size='lg'
-            className='w-full justify-center md:max-w-34.5'
+            className='md:max-w-34.5'
           >
             Get in touch
           </Button>

@@ -72,7 +72,7 @@ function Navbar() {
           aria-controls='mobile-menu'
           aria-label='Toggle mobile menu'
           aria-expanded={isOpen}
-          className='lg:hidden'
+          className='w-fit lg:hidden'
         >
           <HamburgerIcon />
         </Button>
