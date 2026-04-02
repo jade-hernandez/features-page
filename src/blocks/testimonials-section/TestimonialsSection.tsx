@@ -8,8 +8,8 @@ function TestimonialsSection() {
 
   return (
     <section
-      className='mx-auto flex max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:px-0 lg:py-24'
       aria-labelledby='testimonials-heading'
+      className='mx-auto flex max-w-[calc(100%-1.5rem)] flex-col items-center justify-center gap-12 py-12 md:max-w-[calc(100%-2rem)] md:gap-16 md:py-16 lg:py-24 xl:max-w-304'
     >
       <div className='flex flex-col gap-5 px-8 text-center'>
         <div className='flex flex-col gap-3'>

@@ -50,8 +50,8 @@ function ContactSection() {
         </div>
       )}
       <section
-        className='mx-auto flex max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:px-0 lg:py-24'
         aria-labelledby='contact-heading'
+        className='mx-auto flex max-w-[calc(100%-1.5rem)] flex-col items-center justify-center gap-12 py-12 md:max-w-[calc(100%-2rem)] md:gap-16 md:py-16 lg:py-24 xl:max-w-304'
       >
         <div className='flex max-w-304 flex-col gap-12 md:gap-16 lg:flex-row lg:gap-8'>
           <div className='flex w-full flex-col items-start justify-between gap-10 md:gap-12 lg:max-w-[calc(50%-16px)] lg:py-2.75'>
