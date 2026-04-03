@@ -1,4 +1,4 @@
-import type { NavItem, SocialIcon } from "./Footer";
+import type { ComponentType } from "react";
 
 import { FacebookIcon } from "./icons/FacebookIcon";
 import { GithubIcon } from "./icons/GithubIcon";
@@ -6,14 +6,27 @@ import { InstagramIcon } from "./icons/InstagramIcon";
 import { XIcon } from "./icons/XIcon";
 import { YoutubeIcon } from "./icons/YoutubeIcon";
 
-export const sectionsData: NavItem[] = [
+type FooterLinks = {
+  key: string;
+  title: string;
+  path: string;
+};
+
+type FooterIcons = {
+  key: string;
+  icon: ComponentType;
+  label: string;
+  href: string;
+};
+
+const footerLinks: FooterLinks[] = [
   { key: "features-path", title: "Features", path: "/" },
   { key: "pricing-path", title: "Pricing", path: "/" },
   { key: "about-us-path", title: "About Us", path: "/" },
   { key: "contact-path", title: "Contact", path: "/" }
 ];
 
-export const defaultIcons: SocialIcon[] = [
+const footerIcons: FooterIcons[] = [
   {
     key: "youtube-icon",
     icon: YoutubeIcon,
@@ -40,3 +53,5 @@ export const defaultIcons: SocialIcon[] = [
   },
   { key: "x-icon", icon: XIcon, label: "Visit X profile", href: "https://x.com" }
 ];
+
+export { footerIcons, footerLinks };
