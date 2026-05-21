@@ -1,9 +1,15 @@
-import { CheckIcon } from "./icons/CheckIcon";
-import HeroAbstract from "./images/hero-abstract.webp";
+import { ImageWithPlaceholder } from "../../components/image-with-placeholder/ImageWithPlaceholder";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import { Button } from "../../components/ui/Button";
 
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { CheckIcon } from "./icons/CheckIcon";
+
+import HeroAbstractMobile from "./images/hero-abstract-mobile.webp";
+import HeroAbstractTablet from "./images/hero-abstract-tablet.webp";
+import HeroAbstractDesktop from "./images/hero-abstract-desktop.webp";
+
+import { HERO_MOBILE_BLUR, HERO_TABLET_BLUR, HERO_DESKTOP_BLUR } from "./images/blur-data";
 
 const bullets = [
   "Minimum 5K image resolution",
@@ -13,6 +19,7 @@ const bullets = [
 
 function HeroSection() {
   const breakpoint = useMediaQuery();
+
   return (
     <section
       aria-labelledby='hero-heading'
@@ -22,11 +29,10 @@ function HeroSection() {
         <div className='flex h-fit w-full flex-col gap-8 md:gap-16'>
           <h1
             id='hero-heading'
-            className='md:text-5 h-fit w-full text-4xl font-semibold text-neutral-900 md:text-5xl xl:text-6xl'
+            className='h-fit w-full text-4xl font-semibold text-neutral-900 md:text-5xl xl:text-6xl'
           >
             Premium abstract images
           </h1>
-
           <ul className='flex flex-col items-start gap-5'>
             {bullets.map((desc, index) => (
               <li
@@ -56,14 +62,17 @@ function HeroSection() {
           </Button>
         </div>
       </div>
-      <div className='relative h-66 w-77.75 rounded-lg md:h-131.5 md:w-176 xl:w-174'>
-        <img
-          src={HeroAbstract}
-          alt='Hero Abstract'
-          loading='eager'
-          className='h-full w-full rounded-lg object-contain'
-        />
-      </div>
+      <ImageWithPlaceholder
+        altText='An abstract representation of premium design'
+        images={{
+          mobileImagePlaceholder: HERO_MOBILE_BLUR,
+          tabletImagePlaceholder: HERO_TABLET_BLUR,
+          desktopImagePlaceholder: HERO_DESKTOP_BLUR,
+          mobileImage: HeroAbstractMobile,
+          tabletImage: HeroAbstractTablet,
+          desktopImage: HeroAbstractDesktop
+        }}
+      />
     </section>
   );
 }
