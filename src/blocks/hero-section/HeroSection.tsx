@@ -23,7 +23,7 @@ function HeroSection() {
   return (
     <section
       aria-labelledby='hero-heading'
-      className='mx-auto flex max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-12 py-12 md:gap-8 md:py-16 xl:flex-row xl:py-24'
+      className='mx-auto flex max-w-[calc(100%-1.5rem)] flex-col items-center justify-center gap-12 py-12 md:max-w-[calc(100%-2rem)] md:gap-8 md:py-16 xl:flex-row xl:py-24'
     >
       <div className='flex h-fit w-full flex-col justify-start gap-8 align-middle md:gap-16 xl:max-w-122'>
         <div className='flex h-fit w-full flex-col gap-8 md:gap-16'>
@@ -63,6 +63,7 @@ function HeroSection() {
         </div>
       </div>
       <ImageWithPlaceholder
+        imgClassNames='md:h-131.5 lg:max-w-174'
         altText='An abstract representation of premium design'
         images={{
           mobileImagePlaceholder: HERO_MOBILE_BLUR,
