@@ -3,7 +3,7 @@ import { ImageWithPlaceholder } from "../../components/image-with-placeholder/Im
 
 import { HDIcon } from "./icons/HDIcon";
 import { WaterDropIcon } from "./icons/WaterDropIcon";
-import RainbowIcon from "./icons/RainbowIcon";
+import { RainbowIcon } from "./icons/RainbowIcon";
 import DesignerFeaturesMobile from "./images/designer-features-mobile.webp";
 import DesignerFeaturesTablet from "./images/designer-features-tablet.webp";
 import DesignerFeaturesDesktop from "./images/designer-features-desktop.webp";
