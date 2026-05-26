@@ -68,7 +68,7 @@ function formReducer(state: FormState, action: FormAction): FormState {
   }
 }
 
-export function useContactForm() {
+function useContactForm() {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const { name, email, message, isLoading, errors, toast } = state;
 
@@ -163,3 +163,5 @@ export function useContactForm() {
     submitContactForm
   };
 }
+
+export { useContactForm };
