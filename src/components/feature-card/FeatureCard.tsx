@@ -1,8 +1,8 @@
-interface FeatureCardProps {
+type FeatureCardProps = {
   icon: React.ReactNode;
   heading: string;
   description: string;
-}
+};
 
 function FeatureCard({ icon, heading, description }: FeatureCardProps) {
   return (

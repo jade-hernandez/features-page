@@ -1,10 +1,10 @@
 import { cn } from "../../utils/utils";
 
-export interface SegmentedControlProps {
+export type SegmentedControlProps = {
   options: string[];
   value: string;
   onChange: (value: string) => void;
-}
+};
 
 function SegmentedControl({ options, value, onChange }: SegmentedControlProps) {
   return (

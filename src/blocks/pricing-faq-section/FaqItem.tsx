@@ -5,12 +5,12 @@ import { AccordionTrigger, AccordionContent } from "../../components/ui/Accordio
 import { IconFaqClose } from "./icons/FaqCloseIcon";
 import { IconFaqOpen } from "./icons/FaqOpenIcon";
 
-interface FaqItemProps {
+type FaqItemProps = {
   position: number;
   title: string;
   content: string;
   isLast?: boolean;
-}
+};
 
 function FaqItem({ position, title, content, isLast = false }: FaqItemProps) {
   return (
