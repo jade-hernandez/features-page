@@ -44,7 +44,7 @@ function ImageWithPlaceholder({
           <img
             src={desktopImagePlaceholder}
             alt='Loading placeholder'
-            className={cn("size-fit md:h-98.5 lg:max-w-148", imgClassNames)}
+            className={cn("size-fit md:h-98.5 lg:max-w-148", imgClassNames || "")}
           />
         </picture>
       )}
@@ -62,7 +62,7 @@ function ImageWithPlaceholder({
           alt={altText}
           onLoad={() => setIsLoaded(true)}
           onError={() => setIsLoaded(true)}
-          className={cn("size-fit md:h-98.5 lg:max-w-148", imgClassNames)}
+          className={cn("size-fit md:h-98.5 lg:max-w-148", imgClassNames || "")}
         />
       </picture>
     </div>
