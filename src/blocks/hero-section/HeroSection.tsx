@@ -62,18 +62,20 @@ function HeroSection() {
           </Button>
         </div>
       </div>
-      <ImageWithPlaceholder
-        imgClassNames='md:h-131.5 lg:max-w-174'
-        altText='An abstract representation of premium design'
-        images={{
-          mobileImagePlaceholder: HERO_MOBILE_BLUR,
-          tabletImagePlaceholder: HERO_TABLET_BLUR,
-          desktopImagePlaceholder: HERO_DESKTOP_BLUR,
-          mobileImage: HeroAbstractMobile,
-          tabletImage: HeroAbstractTablet,
-          desktopImage: HeroAbstractDesktop
-        }}
-      />
+      <div className='overflow-hidden rounded-lg'>
+        <ImageWithPlaceholder
+          imgClassNames='md:h-131.5 lg:max-w-174'
+          altText='An abstract representation of premium design'
+          images={{
+            mobileImagePlaceholder: HERO_MOBILE_BLUR,
+            tabletImagePlaceholder: HERO_TABLET_BLUR,
+            desktopImagePlaceholder: HERO_DESKTOP_BLUR,
+            mobileImage: HeroAbstractMobile,
+            tabletImage: HeroAbstractTablet,
+            desktopImage: HeroAbstractDesktop
+          }}
+        />
+      </div>
     </section>
   );
 }
